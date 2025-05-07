@@ -3,6 +3,7 @@ import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton/Index";
 import { Input } from "../Input/Index";
 
+
 export function MainForm() {
     return (
         <form className="form" action="">
