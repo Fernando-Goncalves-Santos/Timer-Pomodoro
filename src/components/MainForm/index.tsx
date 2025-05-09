@@ -39,13 +39,12 @@ export function MainForm() {
       type: nextType,
     };
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+
   };
 
   const handleInterrupt = () => {
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   };
-
-  console.log(state.activeTask)
 
   return (
     <form className="form" action="" onSubmit={handleSubmit}>
