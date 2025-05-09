@@ -1,9 +1,12 @@
 import type { TaskModel } from "../../models/TaskModel";
 
+
 export const enum TaskActionTypes {
   START_TASK = "START_TASK",
   INTERRUPT_TASK = "INTERRUPT_TASK",
   RESET_STATE = "RESET_STATE",
+  COUNTDOWN = "COUNTDOWN",
+  COMPLETE_TASK = "COMPLETE_TASK",
 }
 
 export type TaskActionModel =
@@ -12,8 +15,15 @@ export type TaskActionModel =
       payload: TaskModel;
     }
   | {
+      type: TaskActionTypes.COUNTDOWN;
+      payload: number;
+    }
+  | {
       type: TaskActionTypes.INTERRUPT_TASK;
     }
   | {
       type: TaskActionTypes.RESET_STATE;
+    }
+  | {
+      type: TaskActionTypes.COMPLETE_TASK;
     };

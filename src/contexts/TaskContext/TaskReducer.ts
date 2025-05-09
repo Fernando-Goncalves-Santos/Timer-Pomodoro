@@ -43,6 +43,29 @@ export function taskReducer(
       return state;
     }
 
+    case TaskActionTypes.COUNTDOWN: {
+      return {
+        ...state,
+        secondsRemaining: action.payload,
+        formattedSecondsRemaining: formatSecondsToMinutes(action.payload)
+      }
+    }
+
+    case TaskActionTypes.COMPLETE_TASK: {
+      return {
+        ...state,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: state.tasks.map((task) => {
+            if (state.activeTask  && state.activeTask.id === task.id) {
+                return {...task, completeDate: Date.now()}
+            }
+             return task
+        })
+      };
+    }
+
     default:
       return state;
   }
