@@ -9,6 +9,7 @@ import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextType } from "../../utils/getNextType";
 import { TaskActionTypes } from "../../contexts/TaskContext/TaskActions";
 import { Tips } from "../Tips";
+import { showMessage } from "../../adapters/ToastfyAdapter";
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -20,12 +21,13 @@ export function MainForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    showMessage.dismiss()
     if (taskNameInput.current === null) return;
 
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      alert("Input vazio");
+      showMessage.warning('Digite um nome para a tarefa')
       return;
     }
 

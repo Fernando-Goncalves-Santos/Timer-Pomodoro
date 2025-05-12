@@ -1,5 +1,7 @@
 
+import { Link } from 'react-router'
 import styles from './styles.module.css'
+import { RouterLink } from '../RouterLink'
  
 
 export const Footer = () => { // Um jeito melhor de desestruturar
@@ -8,8 +10,8 @@ export const Footer = () => { // Um jeito melhor de desestruturar
   
   return (
     <footer className={styles.footer}>
-      <a href='#'>Entenda como funciona a técnica Pomodoro</a>
-      <a href='#'>Chronos Pomodoro &copy; {new Date().getFullYear()} - Fernando Gonçalves</a>
+      <RouterLink href='/about-pomodoro'>Entenda como funciona a técnica Pomodoro</RouterLink>
+      <RouterLink href='#'>Chronos Pomodoro &copy; {new Date().getFullYear()} - Fernando Gonçalves</RouterLink>
     </footer>
   )
 }
