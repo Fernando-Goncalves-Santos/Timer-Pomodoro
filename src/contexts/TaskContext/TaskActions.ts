@@ -1,4 +1,5 @@
 import type { TaskModel } from "../../models/TaskModel";
+import { TaskStateModel } from "../../models/TaskStateModel";
 
 
 export const enum TaskActionTypes {
@@ -7,6 +8,8 @@ export const enum TaskActionTypes {
   RESET_STATE = "RESET_STATE",
   COUNTDOWN = "COUNTDOWN",
   COMPLETE_TASK = "COMPLETE_TASK",
+  RESET_TASKS = "RESET_TASKS",
+  CHANGE_CONFIG= "CHANGE_CONFIG"
 }
 
 export type TaskActionModel =
@@ -26,4 +29,11 @@ export type TaskActionModel =
     }
   | {
       type: TaskActionTypes.COMPLETE_TASK;
-    };
+    }
+  | {
+      type: TaskActionTypes.RESET_TASKS;
+    }
+  | {
+      type: TaskActionTypes.CHANGE_CONFIG;
+      payload: TaskStateModel['config']
+    }

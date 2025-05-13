@@ -3,15 +3,17 @@ import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextType } from "../../utils/getNextType";
 import styles from "./styles.module.css";
 
+  export const cycleDescriptionMap = {
+    workTime: 'Foco',
+    shortBreakTime: 'Descanso curto',
+    longBreakTime: 'Descanso longo',
+  }
+
 export const Cycles = () => {
   const { state } = useTaskContext();
 
   const cycleStep = Array.from({ length: state.currentCycle });
-  const cycleDescriptionMap = {
-    workTime: 'foco',
-    shortBreakTime: 'descanso curto',
-    longBreakTime: 'descanso longo',
-  }
+
 
   return (
     <div className={styles.cycle}>

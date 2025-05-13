@@ -14,6 +14,7 @@ import { showMessage } from "../../adapters/ToastfyAdapter";
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || ''
 
   const nextCycle = getNextCycle(state.currentCycle);
   const nextType = getNextType(nextCycle);
@@ -41,11 +42,14 @@ export function MainForm() {
       type: nextType,
     };
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+    showMessage.success('Tarefa iniciada')
 
   };
 
   const handleInterrupt = () => {
+    showMessage.dismiss()
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
+    showMessage.info('Tarefa interrompida')
   };
 
   return (
@@ -57,6 +61,7 @@ export function MainForm() {
           label={"task"}
           ref={taskNameInput}
           disabled={!!state.activeTask}
+          defaultValue={lastTaskName}
           // value={taskName} // Essa é a forma controlada, é boa pra fazer validação em tempo real (por ex. e-mail)
           // onChange={(e) => setTaskName(e.target.value)}
         />

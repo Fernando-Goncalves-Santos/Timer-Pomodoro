@@ -66,8 +66,25 @@ export function taskReducer(
       };
     }
 
+    case TaskActionTypes.RESET_TASKS: {
+      return{
+        ...state,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        currentCycle: 0,
+        tasks: []
+      }
+    }
+
+    case TaskActionTypes.CHANGE_CONFIG: {
+      return{
+        ...state,
+        config: {...action.payload}
+      }
+    }
+
     default:
       return state;
   }
-  return state;
 }

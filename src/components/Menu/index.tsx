@@ -35,7 +35,7 @@ export const Menu = () => {
         <HouseIcon />
       </RouterLink>
       <RouterLink
-        href="#"
+        href="/history"
         className={styles.menuLink}
         aria-label="Ir para o Historico"
         title="Historico"
@@ -43,7 +43,7 @@ export const Menu = () => {
         <HistoryIcon />
       </RouterLink>
       <RouterLink
-        href="#"
+        href="/settings"
         className={styles.menuLink}
         aria-label="Ir para as Configurações"
         title="Configurações"
