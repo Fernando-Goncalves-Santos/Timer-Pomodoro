@@ -8,7 +8,6 @@ import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { cycleDescriptionMap } from "../../components/Cycles";
 import { sortTasks, SortTasksOptions } from "../../utils/sortTasks";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { showMessage } from "../../adapters/ToastfyAdapter";
 import { TaskActionTypes } from "../../contexts/TaskContext/TaskActions";
 

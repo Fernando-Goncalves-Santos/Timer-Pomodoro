@@ -2,7 +2,7 @@ import type { TaskModel } from "../../models/TaskModel";
 import { TaskStateModel } from "../../models/TaskStateModel";
 
 
-export const enum TaskActionTypes {
+enum TaskActionTypes {
   START_TASK = "START_TASK",
   INTERRUPT_TASK = "INTERRUPT_TASK",
   RESET_STATE = "RESET_STATE",
@@ -36,4 +36,6 @@ export type TaskActionModel =
   | {
       type: TaskActionTypes.CHANGE_CONFIG;
       payload: TaskStateModel['config']
-    }
+    };
+
+export {TaskActionTypes}
