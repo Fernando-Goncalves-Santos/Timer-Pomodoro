@@ -58,7 +58,7 @@ export function MainForm() {
         <Input
           type={"text"}
           id={"input"}
-          label={"task"}
+          label={"O que você vai fazer?"}
           ref={taskNameInput}
           disabled={!!state.activeTask}
           defaultValue={lastTaskName}
