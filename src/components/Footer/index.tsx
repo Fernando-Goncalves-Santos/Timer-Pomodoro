@@ -8,7 +8,7 @@ export const Footer = () => { // Um jeito melhor de desestruturar
   
   return (
     <footer className={styles.footer}>
-      <RouterLink href='/about-pomodoro'>Entenda como funciona a técnica Pomodoro</RouterLink>
+      <RouterLink href='/about-pomodoro'>Entenda como funciona a técnica Pomodoro 🍅</RouterLink>
       <RouterLink href='#'>Chronos Pomodoro &copy; {new Date().getFullYear()} - Fernando Gonçalves</RouterLink>
     </footer>
   )
